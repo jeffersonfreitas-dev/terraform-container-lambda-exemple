@@ -10,19 +10,6 @@ Este projeto provisiona uma função **AWS Lambda baseada em container Docker**,
 
 ---
 
-## 📁 Estrutura do projeto
-.
-├── app/
-  └── main.py # Código da função Lambda
-├── Dockerfile # Empacotamento da função em container
-├── terraform/
-  ├── main.tf # Infraestrutura com ECR, Lambda, IAM
-  ├── variables.tf # Variáveis reutilizáveis
-  └── outputs.tf # Saídas úteis do Terraform
-└── .github/
-  └── workflows/
-  └── deploy.yml # CI/CD: Build + Push + Apply
-
 ## 🚀 Como funciona
 
 1. Código Python em `app/main.py`
