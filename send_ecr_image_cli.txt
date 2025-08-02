@@ -1,0 +1,14 @@
+# 1. Autenticar no ECR
+aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin <account_id>.dkr.ecr.us-east-1.amazonaws.com
+
+# 2. Build da imagem
+docker build -t meu-lambda-container .
+
+# 3. Tag para o ECR
+docker tag meu-lambda-container:latest <account_id>.dkr.ecr.us-east-1.amazonaws.com/meu-lambda-container:latest
+
+# 4. Push da imagem
+docker push <account_id>.dkr.ecr.us-east-1.amazonaws.com/meu-lambda-container:latest
+
+# Find account_id by aws cli
+aws sts get-caller-identity
